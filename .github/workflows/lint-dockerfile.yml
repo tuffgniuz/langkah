@@ -1,0 +1,25 @@
+name: Lint Dockerfile
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository to get access to the Dockerfile
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Run Dockerfile Linter
+      - name: Lint Dockerfile
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_DOCKERFILE: true
+

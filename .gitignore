@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.env
+*.venv/
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+*.db
+*.swp
+.mypy_cache/
+.pytest_cache/
+.tox/
+.DS_Store
+*.coverage
+coverage.xml
+
+# FastAPI static files
+tmp/
+
+# Docker
+docker-compose.override.yml
+
+# React Native
+node_modules/
+yarn-error.log
+npm-debug.log*
+package-lock.json
+
+# TypeScript
+tsconfig.build.tsbuildinfo
+
+# Android
+*.iml
+.gradle/
+local.properties
+*.keystore
+build/
+.cxx/
+
+# iOS
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xcscmblueprint
+
+# macOS
+.DS_Store
+
+# Misc
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.expo/
+.debug/
+.env.*
+*.orig

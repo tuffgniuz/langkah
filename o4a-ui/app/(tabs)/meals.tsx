@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import WeekDays from "@/components/week-days";
@@ -9,9 +9,17 @@ const Meals: FC = () => {
   return (
     <SafeAreaView>
       {/* Render today's calorie and macros component */}
-      <WeekDays containerStyle="mb-10" />
-      <DailyNutritionSummary kcalEaten={280} kcalGoal={2000} />
-      <ScrollView></ScrollView>
+      <WeekDays containerStyle="mb-5" />
+      <DailyNutritionSummary kcalEaten={1589} kcalGoal={2000} />
+      {/* Overview of logged meals */}
+      {/*
+      <ScrollView>
+        <Text>You haven't logged any meals today</Text>
+      </ScrollView>
+      <TouchableOpacity className="w-full items-center">
+        <Text>Add meal</Text>
+      </TouchableOpacity>
+      */}
     </SafeAreaView>
   );
 };

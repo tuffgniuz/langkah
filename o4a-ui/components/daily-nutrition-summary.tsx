@@ -12,19 +12,32 @@ const DailyNutritionSummary: FC<{
 
   return (
     <View className={`w-full items-center justify-center ${containerStyle}`}>
-      <View className="relative w-40 h-40 items-center justify-center mb-5">
-        <CircularProgress radius={70} strokeWidth={6} percentage={percentage} />
-        <View
-          className="absolute top-1/2 left-1/2"
-          style={{
-            transform: [{ translateX: -25 }, { translateY: -25 }],
-          }}
-        >
-          <Text className="font-bold text-4xl">{kcalGoal - kcalEaten}</Text>
-          <Text className="text-center">kcal left</Text>
+      <View className="flex-row items-center justify-center">
+        <View className="text-center">
+          <Text className="text-center text-white font-bold">{kcalEaten}</Text>
+          <Text className="text-gray">Consumed</Text>
         </View>
+        <View className="relative w-40 h-40 mx-2 items-center justify-center">
+          <CircularProgress
+            radius={70}
+            strokeWidth={6}
+            percentage={percentage}
+          />
+          <View
+            className="absolute top-1/2 left-1/2"
+            style={{
+              transform: [{ translateX: -30 }, { translateY: -25 }],
+            }}
+          >
+            <Text className="text-white font-bold text-4xl">
+              {kcalGoal - kcalEaten}
+            </Text>
+            <Text className="text-gray text-center">kcal left</Text>
+          </View>
+        </View>
+        <Text className="text-gray">Burned</Text>
       </View>
-      {/* Macronutrients Breakdown */}
+      {/* Macronutrients Breakdown
       <View className="flex-row gap-4">
         <View className="flex-row items-center gap-2">
           <CircularProgress
@@ -55,6 +68,7 @@ const DailyNutritionSummary: FC<{
           <Text>Fats</Text>
         </View>
       </View>
+        */}
     </View>
   );
 };

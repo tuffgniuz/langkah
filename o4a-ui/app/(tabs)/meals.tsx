@@ -7,10 +7,10 @@ import DailyNutritionSummary from "@/components/daily-nutrition-summary";
 
 const Meals: FC = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-primary h-full">
       {/* Render today's calorie and macros component */}
       <WeekDays containerStyle="mb-5" />
-      <DailyNutritionSummary kcalEaten={1589} kcalGoal={2000} />
+      <DailyNutritionSummary kcalEaten={1330} kcalGoal={2000} />
       {/* Overview of logged meals */}
       {/*
       <ScrollView>

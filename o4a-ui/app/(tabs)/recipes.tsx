@@ -1,14 +1,12 @@
-import { Link } from "expo-router";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Home = () => {
+const Recipes = () => {
   return (
     <SafeAreaView>
-      <Text>Home</Text>
-      <Link href="/meals">Go to Meals</Link>
+      <Text>Recipes</Text>
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default Recipes;

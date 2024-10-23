@@ -10,7 +10,9 @@ const DailyNutritionSummary: FC<{
   const percentage = Math.min((kcalEaten / kcalGoal) * 100, 100);
 
   return (
-    <View className={`w-full items-center justify-center ${containerStyle}`}>
+    <View
+      className={`w-full items-center justify-center mb-5 ${containerStyle}`}
+    >
       <View className="flex-row items-center justify-center">
         <View className="relative w-40 h-40 mx-2 items-center justify-center">
           <CircularProgress

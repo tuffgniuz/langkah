@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Text, View } from "react-native";
-import Svg, { Circle } from "react-native-svg";
 import CircularProgress from "./circular-progress";
 
 const DailyNutritionSummary: FC<{
@@ -13,10 +12,6 @@ const DailyNutritionSummary: FC<{
   return (
     <View className={`w-full items-center justify-center ${containerStyle}`}>
       <View className="flex-row items-center justify-center">
-        <View className="text-center">
-          <Text className="text-center text-white font-bold">{kcalEaten}</Text>
-          <Text className="text-gray">Consumed</Text>
-        </View>
         <View className="relative w-40 h-40 mx-2 items-center justify-center">
           <CircularProgress
             radius={70}
@@ -35,7 +30,6 @@ const DailyNutritionSummary: FC<{
             <Text className="text-gray text-center">kcal left</Text>
           </View>
         </View>
-        <Text className="text-gray">Burned</Text>
       </View>
       {/* Macronutrients Breakdown
       <View className="flex-row gap-4">

@@ -4,6 +4,7 @@ import { Tabs } from "expo-router";
 import { icons } from "../../constants";
 
 import TabIcon from "../../components/navigation/tab-icon";
+import { Text } from "react-native";
 
 const TabLayout = () => {
   return (
@@ -13,6 +14,9 @@ const TabLayout = () => {
         tabBarInactiveTintColor: "#9da0a6",
         tabBarActiveTintColor: "#3ffeb9",
         tabBarStyle: {
+          elevation: 0,
+          shadowOpacity: 0,
+          shadowColor: "transparent",
           backgroundColor: "#1e1e1e",
           borderTopColor: "#292e3a",
           borderTopWidth: 1,
@@ -20,11 +24,21 @@ const TabLayout = () => {
         },
       }}
     >
+      {/* For the nutrition screen I want an input field above the tab icons */}
       <Tabs.Screen
         name="nutrition"
         options={{
           title: "Nutrition",
           headerShown: false,
+          tabBarStyle: {
+            elevation: 0,
+            shadowOpacity: 0,
+            shadowColor: "transparent",
+            backgroundColor: "#1e1e1e",
+            borderTopColor: "#292e3a",
+            borderTopWidth: 0,
+            height: 84,
+          },
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               icon={icons.meal}

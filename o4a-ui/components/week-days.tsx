@@ -17,12 +17,12 @@ const WeekDays: FC<{ containerStyle?: string }> = ({ containerStyle }) => {
           className={`w-12 p-2 rounded-full items-center justify-center ${date.toDateString() === currentDate.toDateString() ? "bg-secondary" : ""}`}
         >
           <Text
-            className={`mb-5 ${date.toDateString() === currentDate.toDateString() ? "text-white" : "text-gray"}`}
+            className={`mb-2 ${date.toDateString() === currentDate.toDateString() ? "text-white" : "text-gray"}`}
           >
             {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][index]}
           </Text>
           <Text
-            className={`text-white font-bold p-2 ${date.toDateString() === currentDate.toDateString() ? "bg-white text-primary rounded-full" : ""}`}
+            className={`flex items-center justify-center text-white font-bold w-8 h-8 p-2 ${date.toDateString() === currentDate.toDateString() ? "bg-white text-primary rounded-full" : ""}`}
           >
             {date.getDate()}
           </Text>

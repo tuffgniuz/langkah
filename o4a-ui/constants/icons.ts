@@ -7,6 +7,9 @@ import fire from "../assets/icons/fire.png";
 import bowl from "../assets/icons/bowl.png";
 import edit from "../assets/icons/edit.png";
 import clock from "../assets/icons/clock.png";
+import add from "../assets/icons/add.png";
+import search from "../assets/icons/search.png";
+import barcode from "../assets/icons/barcode.png";
 
 export default {
   journal,
@@ -18,4 +21,7 @@ export default {
   bowl,
   edit,
   clock,
+  add,
+  search,
+  barcode,
 };

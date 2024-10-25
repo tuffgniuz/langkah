@@ -50,15 +50,25 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="workouts"
+        name="workout"
         options={{
-          title: "Workouts",
+          title: "Workout",
           headerShown: false,
+          tabBarStyle: {
+            elevation: 0,
+            shadowOpacity: 0,
+            shadowColor: "transparent",
+            backgroundColor: "#1e1e1e",
+            borderTopColor: "#292e3a",
+            borderTopWidth: 0,
+            height: 84,
+          },
+
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               icon={icons.dumbell}
               color={color}
-              name="Workouts"
+              name="Workout"
               focused={focused}
             />
           ),

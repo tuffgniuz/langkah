@@ -1,7 +1,6 @@
 FROM python:3.11.4-alpine
 
 ARG ENVIRONMENT
-ARG ENVIRONMENT=${ENVIRONMENT}
 
 ENV PYTHONDONTWRITEBYTCODE=1 \
   PYTHONBUFFERED=1 \
@@ -23,7 +22,7 @@ RUN pip install --upgrade pip
 RUN pip install pipenv
 
 RUN pipenv install --system --deploy && \
-  run -rf ~/.cache/pip
+  rm -rf ~/.cache/pip
 
 COPY --chown=dev:dev o4a-api/scripts/startup.sh /app/scripts
 COPY --chown=dev:dev o4a-api/migrations /app/migrations

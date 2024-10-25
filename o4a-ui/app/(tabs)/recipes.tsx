@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Recipes = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-primary h-full">
       <Text>Recipes</Text>
     </SafeAreaView>
   );

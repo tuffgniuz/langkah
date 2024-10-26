@@ -14,4 +14,12 @@ class PostgresSettings(BaseSettings):
         env_file = str(Path(__file__).resolve().parent.parent.parent.parent / ".env")
 
 
+class JWTSettings(BaseSettings):
+    jwt_secret: str
+
+    class Config:
+        env_file = str(Path(__file__).resolve().parent.parent.parent.parent / ".env")
+
+
 pg_settings = PostgresSettings()
+jwt_settings = JWTSettings()

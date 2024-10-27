@@ -18,3 +18,21 @@ class Goal(Enum):
     MUSCLE_GAIN = "muscle_gain"
     MAINTAIN = "maintain"
     BODY_RECOMPOSITION = "body_recomposition"
+
+
+class NutrientLevel(Enum):
+    LOW = "low"
+    MODERATE = "moderate"
+    HIGH = "high"
+
+
+class MeasurementUnit(Enum):
+    GRAM = "gram"
+    MILIGRAM = "mg"
+    KILOGRAM = "kg"
+    LITER = "l"
+    MILILITER = "ml"
+    CUP = "cup"
+    TABLESPOON = "tbsp"
+    TEASPOON = "tsp"
+    PIECE = "piece"

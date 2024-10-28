@@ -20,7 +20,7 @@ const Index = () => {
         <Button
           title="Continue"
           containerStyle="w-full"
-          handlePress={() => router.push("/nutrition")}
+          handlePress={() => router.push("/(nutrition)")}
         />
       </View>
     </SafeAreaView>

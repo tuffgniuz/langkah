@@ -1,12 +1,21 @@
 import React from "react";
-import { Tabs } from "expo-router";
+import { Tabs, useSegments } from "expo-router";
 
 import { icons } from "../../constants";
 
 import TabIcon from "../../components/navigation/tab-icon";
-import { Text } from "react-native";
 
 const TabLayout = () => {
+  const segments = useSegments();
+
+  // Check if the current navigation path includes the "create-meal" segment.
+  // The `useSegments` hook returns an array of strings representing each segment
+  // in the current path (e.g., ["tabs", "nutrition", "create-meal"]).
+  // Since TypeScript may not recognize "create-meal" as a valid segment by default,
+  // we use a type assertion `(segments as readonly string[])` to avoid a type error.
+  // This allows us to safely check if "create-meal" is part of the current route.
+  const isCreateMeal = (segments as readonly string[]).includes("create-meal");
+
   return (
     <Tabs
       screenOptions={{
@@ -26,19 +35,20 @@ const TabLayout = () => {
     >
       {/* For the nutrition screen I want an input field above the tab icons */}
       <Tabs.Screen
-        name="nutrition"
+        name="(nutrition)"
         options={{
-          title: "Nutrition",
           headerShown: false,
-          tabBarStyle: {
-            elevation: 0,
-            shadowOpacity: 0,
-            shadowColor: "transparent",
-            backgroundColor: "#1e1e1e",
-            borderTopColor: "#292e3a",
-            borderTopWidth: 0,
-            height: 84,
-          },
+          tabBarStyle: isCreateMeal
+            ? { display: "none" }
+            : {
+                elevation: 0,
+                shadowOpacity: 0,
+                shadowColor: "transparent",
+                backgroundColor: "#1e1e1e",
+                borderTopColor: "#292e3a",
+                borderTopWidth: 0,
+                height: 84,
+              },
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               icon={icons.meal}

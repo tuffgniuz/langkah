@@ -3,6 +3,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import { icons } from "../../constants";
 import { Meal } from "@/constants/models";
+import { router } from "expo-router";
 
 const Meals: FC<{ meals?: Meal[] }> = ({ meals }) => {
   return (
@@ -49,7 +50,10 @@ const Meals: FC<{ meals?: Meal[] }> = ({ meals }) => {
           className="absolute bg-secondary left-6"
           style={{ width: 1, height: 20, top: -15 }}
         />
-        <TouchableOpacity className="bg-secondary h-8 w-8 p-2 rounded-full items-center justify-center ml-2">
+        <TouchableOpacity
+          className="bg-secondary h-8 w-8 p-2 rounded-full items-center justify-center ml-2"
+          onPress={() => router.push("/(nutrition)/create-meal")}
+        >
           <Image source={icons.add} />
         </TouchableOpacity>
       </View>

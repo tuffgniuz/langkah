@@ -4,9 +4,9 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { icons } from "@/constants";
 
-import WeekDays from "../../components/week-days";
-import DailyNutritionSummary from "../../components/daily-nutrition-summary";
-import Meals from "../../components/data-display/meals";
+import WeekDays from "@/components/week-days";
+import DailyNutritionSummary from "@/components/daily-nutrition-summary";
+import Meals from "@/components/data-display/meals";
 
 const DUMMY_MEALS = [
   {

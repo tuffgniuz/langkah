@@ -9,6 +9,7 @@ const NutritionLayout = () => {
     >
       <Stack.Screen name="index" />
       <Stack.Screen name="create-meal" />
+      <Stack.Screen name="food-product-detail" />
     </Stack>
   );
 };

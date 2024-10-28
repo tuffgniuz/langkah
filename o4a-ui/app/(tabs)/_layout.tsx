@@ -8,12 +8,7 @@ import TabIcon from "../../components/navigation/tab-icon";
 const TabLayout = () => {
   const segments = useSegments();
 
-  // Check if the current navigation path includes the "create-meal" segment.
-  // The `useSegments` hook returns an array of strings representing each segment
-  // in the current path (e.g., ["tabs", "nutrition", "create-meal"]).
-  // Since TypeScript may not recognize "create-meal" as a valid segment by default,
-  // we use a type assertion `(segments as readonly string[])` to avoid a type error.
-  // This allows us to safely check if "create-meal" is part of the current route.
+  // Determine if the current route includes "create-meal" by checking path segments.
   const isCreateMeal = (segments as readonly string[]).includes("create-meal");
 
   return (

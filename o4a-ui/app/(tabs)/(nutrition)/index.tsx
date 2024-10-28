@@ -7,6 +7,7 @@ import { icons } from "@/constants";
 import WeekDays from "@/components/week-days";
 import DailyNutritionSummary from "@/components/daily-nutrition-summary";
 import Meals from "@/components/data-display/meals";
+import SearchFood from "@/components/actions/search-food";
 
 const DUMMY_MEALS = [
   {
@@ -31,22 +32,7 @@ const Nutrition: FC = () => {
       </ScrollView>
       {/* Button to navigate to food search screen */}
       <View className="border-t border-black-200 px-4 pt-2">
-        <TouchableOpacity className="flex-row items-center justify-between bg-black-200 p-4 rounded-lg">
-          <View className="flex-row items-center gap-2">
-            <Image
-              source={icons.search}
-              className="w-4 h-4"
-              tintColor="#9da0a6"
-            />
-            <Text className="text-gray">Search Food</Text>
-          </View>
-          {/* should be pushed to the right edge */}
-          <Image
-            source={icons.barcode}
-            className="w-4 h-4"
-            tintColor="#9da0a6"
-          />
-        </TouchableOpacity>
+        <SearchFood />
       </View>
     </SafeAreaView>
   );

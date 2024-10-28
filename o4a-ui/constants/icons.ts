@@ -10,6 +10,7 @@ import clock from "../assets/icons/clock.png";
 import add from "../assets/icons/add.png";
 import search from "../assets/icons/search.png";
 import barcode from "../assets/icons/barcode.png";
+import carrot from "../assets/icons/carrot.png";
 
 export default {
   journal,
@@ -24,4 +25,5 @@ export default {
   add,
   search,
   barcode,
+  carrot,
 };

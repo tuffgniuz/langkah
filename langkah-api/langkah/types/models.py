@@ -23,11 +23,16 @@ meal_food_product = Table(
     "meal_food_product",
     Base.metadata,
     Column("meal_id", ForeignKey("meals.id"), primary_key=True),
-    Column("food_product_id", ForeignKey("food_products.id", primary_key=True)),
+    Column("food_product_id", ForeignKey("food_products.id"), primary_key=True),
 )
 
 
 class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, unique=True, default=uuid.uuid4
+    )
     name: Mapped[str] = mapped_column(String, nullable=False)
     avatar: Mapped[str] = mapped_column(String, nullable=True)
     height: Mapped[float] = mapped_column(Float, nullable=False)

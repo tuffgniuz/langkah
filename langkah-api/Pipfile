@@ -13,6 +13,7 @@ asyncpg = "*"
 fastapi-users = {extras = ["redis", "oauth", "sqlalchemy"], version = "*"}
 supabase = "*"
 python-decouple = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

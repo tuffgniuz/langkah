@@ -1,6 +1,5 @@
-from collections.abc import AsyncGenerator
-
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 from langkah.lib.config.settings import (
     supabase_db_host,
@@ -10,12 +9,20 @@ from langkah.lib.config.settings import (
     supabase_db_user,
 )
 
-DB_URL = f"postgresql://{supabase_db_user}:{supabase_db_password}@{supabase_db_host}:{supabase_db_port}/{supabase_db_name}"
+# Construct the database URL
+DB_URL = f"postgresql+psycopg2://{supabase_db_user}:{supabase_db_password}@{supabase_db_host}:{supabase_db_port}/{supabase_db_name}"
 
-engine = create_async_engine(DB_URL)
-session_maker = async_sessionmaker(engine, expire_on_commit=False)
+# Create a synchronous SQLAlchemy engine
+engine = create_engine(DB_URL)
+
+# Create a sessionmaker for creating new sessions
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
-    async with session_maker() as session:
-        yield session
+# Dependency to provide a new database session for each request
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

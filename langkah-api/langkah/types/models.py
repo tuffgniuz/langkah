@@ -15,7 +15,7 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from o4a.types.enums import ActivityLevel, Goal, Sex
+from langkah.types.enums import ActivityLevel, Goal, Sex
 
 Base = declarative_base()
 

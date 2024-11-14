@@ -1,21 +1,23 @@
-from fastapi_users.schemas import BaseUser, BaseUserCreate
+from pydantic import BaseModel, EmailStr
 
-from o4a.types.enums import ActivityLevel, Goal, Sex
+from langkah.types.enums import ActivityLevel, Goal, Sex
 
 
-class UserCreate(BaseUserCreate):
+class UserReadSchema(BaseModel):
+    id: str
     name: str
-    height: float
-    sex: Sex
-    activity_level: ActivityLevel
-    goal: Goal
+    email: EmailStr
 
 
-class UserRead(BaseUser):
+class UserCreateSchema(BaseModel):
     name: str
-    avatar: str
-    height: float
-    sex: Sex
-    activity_level: ActivityLevel
-    goal: Goal
-    daily_caloric_needs: float
+    email: EmailStr
+    password: str
+
+
+class UserUpdateSchema(BaseModel):
+    name: str | None
+    height: float | None
+    sex: Sex | None
+    activity_level: ActivityLevel | None
+    goal: Goal | None

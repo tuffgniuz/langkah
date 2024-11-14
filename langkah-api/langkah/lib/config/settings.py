@@ -15,4 +15,4 @@ supabase_db_host = config("SUPABASE_DB_HOST")
 supabase_db_port = config("SUPABASE_DB_PORT")
 supabase_db_name = config("SUPABASE_DB_NAME")
 
-supabase: Client = create_client(supabase_project_url, supabase_key)  # type: ignore
+supabase_client: Client = create_client(supabase_project_url, supabase_key)  # type: ignore

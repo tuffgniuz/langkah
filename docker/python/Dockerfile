@@ -11,7 +11,7 @@ WORKDIR /app
 
 RUN apk update && \
   apk upgrade && \
-  apk add --no-cache bash netcat-openbsd figlet && \
+  apk add --no-cache bash netcat-openbsd figlet postgresql-client && \
   rm -rf /var/cache/apk/* && \
   addgroup -g 1000 dev && adduser -D -u 1000 -G dev dev
 

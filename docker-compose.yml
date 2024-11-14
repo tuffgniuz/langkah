@@ -8,12 +8,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - langkah-api/.env
     restart: on-failure
     volumes:
       - ./langkah-api:/app
-
-volumes:
-  db-data:
-  redis-data:
-

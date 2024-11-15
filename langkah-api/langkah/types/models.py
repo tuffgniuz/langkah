@@ -35,12 +35,12 @@ class User(Base):
     )
     name: Mapped[str] = mapped_column(String, nullable=False)
     avatar: Mapped[str] = mapped_column(String, nullable=True)
-    height: Mapped[float] = mapped_column(Float, nullable=False)
-    sex: Mapped[Sex] = mapped_column(Enum(Sex), nullable=False)
+    height: Mapped[float] = mapped_column(Float, nullable=True)
+    sex: Mapped[Sex] = mapped_column(Enum(Sex), nullable=True)
     activity_level: Mapped[ActivityLevel] = mapped_column(
-        Enum(ActivityLevel), nullable=False
+        Enum(ActivityLevel), nullable=True
     )
-    goal: Mapped[Goal] = mapped_column(Enum(Goal), nullable=False)
+    goal: Mapped[Goal] = mapped_column(Enum(Goal), nullable=True)
     daily_caloric_needs: Mapped[Float] = mapped_column(Float, nullable=True)
     meals: Mapped[list["Meal"]] = relationship("Meal", back_populates="user")
 
@@ -68,6 +68,7 @@ class BodyMetric(Base):
     hips: Mapped[float] = mapped_column(Float, nullable=True)
 
     user_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("users.id"))
+    user: Mapped[User] = relationship("User", back_populates="body_metrics")
 
 
 class Meal(Base):
